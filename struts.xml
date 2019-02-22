@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="movie" namespace="/" extends="struts-default">
+
+
+		<action name="UserAction_*" class="userAction" method="{1}">
+			<result name="toHome" type="redirect">/index.jsp</result>
+			<result name="loginError">/login.jsp</result>
+			<result name="toLogin" type="redirect">/login.jsp</result>
+		</action>
+
+		<action name="MovieAction_*" class="movieAction" method="{1}">
+			<result name="search">/search.jsp</result>
+			<result name="toItem">/item.jsp</result>
+		</action>
+
+
+	</package>
+</struts>
